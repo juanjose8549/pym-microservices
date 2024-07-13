@@ -4,6 +4,7 @@ import strawberry
 from strawberry.schema_directive import Location
 
 from .query import Query
+from .mutation import Mutation
 
 
 @strawberry.schema_directive(locations=[Location.SCHEMA])
@@ -16,13 +17,6 @@ class Contact:
         description="Other relevant notes can be included here; supports markdown links"
     )
 
-
-
-@strawberry.type
-class Mutation:
-    @strawberry.mutation
-    def create_user(self, name: str) -> str:
-        return name
 
 
 schema = strawberry.federation.Schema(

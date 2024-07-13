@@ -7,3 +7,8 @@ class Advisor:
     id: strawberry.ID
     name: str
     expertise: str = "Finance"
+
+@strawberry.input
+class AdvisorInput:
+    name: str
+    expertise: str = "Finance"
