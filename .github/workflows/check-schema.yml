@@ -26,6 +26,7 @@ jobs:
   test-and-export-schema:
     name: Test and export schema
     uses: ./.github/workflows/test.yml
+    secrets: inherit
 
   check-schema:
     needs: [test-and-export-schema]
