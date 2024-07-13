@@ -17,6 +17,10 @@ jobs:
     env:
       SCHEMA_FILE: __rover_schema.graphql
       SCHEMA_ARTIFACT: schema
+      MONGO_USERNAME: ${{ secrets.MONGO_USERNAME }}
+      MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+      MONGO_HOSTNAME: ${{ secrets.MONGO_HOSTNAME }}
+      MONGO_CLUSTER: ${{ secrets.MONGO_CLUSTER }}
     outputs:
       schema: ${{ env.SCHEMA_FILE }}
       schema_artifact: ${{ env.SCHEMA_ARTIFACT }}
