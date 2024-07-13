@@ -22,10 +22,6 @@ class Thing:
 @strawberry.type
 class Query:
     @strawberry.field
-    def thing(self, id: strawberry.ID) -> Optional[Thing]:
-        return Thing(id=id, name="Thing")
-
-    @strawberry.field
     async def allAdvisors() -> Optional[List[AdvisorModel]]:
         allAdvisors = await get_all_advisors(AdvisorDBModel)
         if not allAdvisors:
