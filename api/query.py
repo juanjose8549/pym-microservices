@@ -7,17 +7,6 @@ from .resolvers.query_resolvers import get_all_advisors
 
 from fastapi import HTTPException
 
-@strawberry.federation.type(keys=["id"])
-class Thing:
-    id: strawberry.ID
-    name: Optional[str]
-
-    @classmethod
-    def resolve_reference(cls, **representation) -> "Thing":
-        id_ = strawberry.ID(representation["id"])
-
-        return cls(id=id_, name="Thing")
-
 
 @strawberry.type
 class Query:
